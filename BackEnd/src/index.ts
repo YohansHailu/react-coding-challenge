@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors'
 import process from 'process';
+import UserRouter from './UserService/userRouter';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ mongoose.connection.on('error', err => {
 });
 
 
+app.use(UserRouter);
 
 app.use(express.json());
 app.use(cors())
