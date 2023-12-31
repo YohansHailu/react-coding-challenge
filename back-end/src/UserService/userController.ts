@@ -44,6 +44,14 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 };
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {
+
+  // if id is in boday, send it to update
+  if (req.body._id) {
+    req.params.id = req.body._id;
+    updateUser(req, res);
+    return;
+  }
+
   try {
     const { name, sector_names } = req.body;
     if (!name || !sector_names) {
