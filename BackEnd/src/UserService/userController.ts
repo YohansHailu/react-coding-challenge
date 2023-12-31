@@ -12,6 +12,22 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
+// get user by name
+export const getUserByName = async (req: Request, res: Response): Promise<void> => {
+  const { name } = req.params;
+  try {
+    const user = await UserRepository.getUserByName(name);
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).send('User not found');
+    }
+  } catch (error: any) {
+    console.error('Error fetching user by name:', error.message);
+    res.status(500).send('Internal Server Error');
+  }
+};
+
 export const getUserById = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
   try {
@@ -29,12 +45,12 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { name, sector_id } = req.body;
-    if (!name || !sector_id) {
+    const { name, sector_names } = req.body;
+    if (!name || !sector_names) {
       res.status(400).json({ error: 'Name and sector_id are required.' });
       return;
     }
-    const newUser = { name, sector_id };
+    const newUser = { name, sector_names };
     const addedUser = await UserRepository.addUser(newUser);
     res.json(addedUser);
 
@@ -46,11 +62,11 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
 
 export const updateUser = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
-  const { name, sector_id } = req.body;
+  const { name, sector_names } = req.body;
   try {
 
 
-    const newUser = { name, sector_id };
+    const newUser = { name, sector_names };
     const updatedUser = await UserRepository.updateUser(id, newUser);
     if (updatedUser) {
       res.json(updatedUser);

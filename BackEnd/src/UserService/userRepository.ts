@@ -23,6 +23,8 @@ async function addUser(newUser: Partial<IUser>): Promise<IUser> {
   return user;
 }
 
+
+
 async function updateUser(userId: string, updatedData: Partial<IUser>): Promise<IUser | null> {
   const objectId = new mongoose.mongo.ObjectId(userId);
   const user = await UserModel.findByIdAndUpdate(objectId, updatedData, { new: true });

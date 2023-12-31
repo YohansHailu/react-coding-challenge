@@ -10,10 +10,12 @@ const sectorSchema = new Schema<ISector>({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   parent: {
     type: Types.ObjectId,
     ref: 'Sector',
+    unique: true,
   },
   children: [{
     type: Types.ObjectId,

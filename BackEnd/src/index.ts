@@ -23,12 +23,12 @@ mongoose.connection.on('error', err => {
 });
 
 
-app.use(UserRouter);
-app.use(SectorRouter);
 
 app.use(express.json());
 app.use(cors())
 
+app.use(UserRouter);
+app.use(SectorRouter);
 
 app.get("/helloworld", (_, res: Response) => {
   res.send('helloworld')
