@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import UserDetailPage from './pages/UserDetailPage';
 import ErrorPage from './pages/ErrorPage';
 import UpdatePage from './pages/UpdatePage';
+import "./App.css"
 
 
 function App() {
