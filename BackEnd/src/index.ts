@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors'
 import process from 'process';
 import UserRouter from './UserService/userRouter';
+import SectorRouter from './SectorService/sectorRouter';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ mongoose.connection.on('error', err => {
 
 
 app.use(UserRouter);
+app.use(SectorRouter);
 
 app.use(express.json());
 app.use(cors())
