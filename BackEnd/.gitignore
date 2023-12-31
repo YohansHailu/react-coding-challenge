@@ -1,0 +1,46 @@
+.env
+# Node.js
+node_modules/
+
+# TypeScript
+*.tsbuildinfo
+
+# Dependency directories
+/*/dist/
+/*/out/
+/*/build/
+
+# Typescript v1 declaration files
+*.declaration.ts
+
+# Optional npm package files
+npm-debug.log
+*.log
+*.lock
+
+# dotenv environment variables file
+.env
+
+# Mac OS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Node.js generated files
+*.pid
+*.log
+
+# Yarn
+yarn-error.log
+.pnp/
+.pnp.js
+
+# Prettier
+.prettier*
+
+# Jest
+coverage/
