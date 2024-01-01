@@ -3,15 +3,15 @@
 
 **Database Dump**: *Can be found on the root folder of the repo*
 
-## Database Schema.
-# user Schema
+# Database Schema.
+## user Schema
 ````javascript
 const userSchema = new Schema<IUser>({
   name: String,
   sector_names: { type: [[String]], required: true },
 });
 ````
-# Sector Schema
+## Sector Schema
 ```javascript
 const sectorSchema = new Schema<ISector>({
   name: { type: String, required: true, unique: true },
