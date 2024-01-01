@@ -40,12 +40,12 @@ export function deleteUser(userId, setLoading) {
   setLoading(true);
   axios.delete(`${baseUrl}/users/${userId}`).then((response) => {
     console.log(response.data);
-    localStorage.removeItem("userId");
     window.location.href = "/register";
   }).catch((error) => {
     console.log(error);
     alert("Error in deleting user. Please try again.");
   }).finally(() => {
     setLoading(false);
+    localStorage.removeItem("userId");
   });
 }
