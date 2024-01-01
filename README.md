@@ -3,6 +3,24 @@
 
 **Database Dump**: *Can be found on the root folder of the repo*
 
+## Database Schema.
+# user Schema
+````javascript
+const userSchema = new Schema<IUser>({
+  name: String,
+  sector_names: { type: [[String]], required: true },
+});
+````
+# Sector Schema
+```javascript
+const sectorSchema = new Schema<ISector>({
+  name: { type: String, required: true, unique: true },
+  parent: { type: Types.ObjectId, ref: 'Sector', unique: true },
+  children: [{ type: Types.ObjectId, ref: 'Sector' }],
+});
+```
+
+
 ## Overview
 coding challenge sent from a open position.
 This project is a responsive single-page application (SPA) developed using the React.js frontend framework, with Express.js serving as the backend. The database used is MongoDB, and Mongoose is utilized for data modeling and interaction. The UI is designed for optimal visual appeal, making use of the Ant Design component library.
