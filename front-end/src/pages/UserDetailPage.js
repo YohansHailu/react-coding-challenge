@@ -30,9 +30,6 @@ function UserDetailPage() {
                 Delete
               </Button>
             </>
-
-
-
           }
         >
           <UserDetail userId={id} />
