@@ -1,12 +1,11 @@
-FROM 21-alpine3.18
+FROM node:slim
 
-WORKDIR /src/app
+WORKDIR /app
 
-COPY . .
+COPY . /app
 
 RUN npm install
 
-
 EXPOSE 5500
 
-CMD ["node", "start"]
+CMD npm run start

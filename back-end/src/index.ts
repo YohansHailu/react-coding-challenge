@@ -9,7 +9,7 @@ import SectorRouter from './SectorService/sectorRouter';
 dotenv.config();
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5500;
 const mongodbUrl = process.env.DATABASE_URL || "";
 const app: Express = express();
 

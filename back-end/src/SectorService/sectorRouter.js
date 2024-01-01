@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var sectorController_1 = require("./sectorController");
+var router = express_1.default.Router();
+router.get('/sectors/root', sectorController_1.getRootSectors);
+router.get('/sectors/full_graph', sectorController_1.getFullSectorGraph);
+router.get('/sectors', sectorController_1.getAllSectors);
+router.get('/sectors/:id', sectorController_1.getSectorById);
+router.post('/sectors', sectorController_1.createSector);
+router.put('/sectors/:id', sectorController_1.updateSector);
+router.delete('/sectors/:id', sectorController_1.deleteSectorById);
+router.post('/sectors/parent_name', sectorController_1.createSectorUsingParentName);
+exports.default = router;
