@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert, Cascader, Skeleton } from 'antd';
 import { mapOptions, makeOtherLast, fetcher } from '../utility/sectorUtility';
+const { SHOW_PARENT, SHOW_CHILD } = Cascader;
 
 
 const SelectBox = ({ sector_names, setSector, swrOptions }) => {
@@ -17,14 +18,22 @@ const SelectBox = ({ sector_names, setSector, swrOptions }) => {
     setSector(value);
   };
 
+
+
   const sectorOptions = swrOptions.data.map(mapOptions);
   makeOtherLast(sectorOptions);
+
 
   return <Cascader
     style={{ width: '100%' }}
     options={sectorOptions}
     defaultValue={sector_names}
     onChange={onChange}
+    multiple
+    maxTagCount="responsive"
+    showCheckedStrategy={SHOW_CHILD}
+
+
     placeholder="Select the sector you are in" />;
 };
 

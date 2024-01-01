@@ -8,6 +8,8 @@ export const mapOptions = (item) => {
 
   if (item.children && item.children.length > 0) {
     mappedItem.children = item.children.map(mapOptions);
+  } else {
+    mappedItem.children = undefined;
   }
 
   return mappedItem;

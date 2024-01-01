@@ -4,7 +4,7 @@ import baseUrl from '../config';
 
 export function postUser(name, sector_names, setSubmitting) {
   setSubmitting(true);
-  console.log("submitting sector -> " + sector_names.join('/') + "  and name ->" + name);
+  console.log("submitting sector -> ", sector_names);
   let userData = { name: name, sector_names: sector_names };
 
   axios.post(`${baseUrl}/users`, userData).then((response) => {
@@ -22,7 +22,7 @@ export function postUser(name, sector_names, setSubmitting) {
 
 export function updateUser(name, sector_names, userId, setSubmitting) {
   setSubmitting(true);
-  console.log("submitting sector -> " + sector_names.join('/') + "  and name ->" + name);
+  console.log("submitting sector -> ", sector_names);
   let userData = { name: name, sector_names: sector_names };
 
   axios.put(`${baseUrl}/users/${userId}`, userData).then((response) => {
