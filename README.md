@@ -1,6 +1,7 @@
 # react-coding-challenge
-versel-link:
-database-dump-> can befound on the root folder of the repo
+**Versel Link**: [https://react-coding-challenge-flame.vercel.app](https://react-coding-challenge-flame.vercel.app)
+
+**Database Dump**: *Can be found on the root folder of the repo*
 
 ## Overview
 coding challenge sent from a open position.
